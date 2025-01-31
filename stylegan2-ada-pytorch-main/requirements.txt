@@ -1,0 +1,8 @@
+tensorboard
+click
+requests
+tqdm
+pyspng
+ninja
+imageio-ffmpeg==0.4.3
+boto3

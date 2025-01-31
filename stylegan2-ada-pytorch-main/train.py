@@ -16,7 +16,7 @@ import json
 import tempfile
 import torch
 import dnnlib
-
+from training import conector
 from training import training_loop
 from metrics import metric_main
 from torch_utils import training_stats
@@ -531,7 +531,7 @@ def main(ctx, outdir, dry_run, **config_kwargs):
             subprocess_fn(rank=0, args=args, temp_dir=temp_dir)
         else:
             torch.multiprocessing.spawn(fn=subprocess_fn, args=(args, temp_dir), nprocs=args.num_gpus)
-
+    conector.subir_s3('terminado')
 #----------------------------------------------------------------------------
 
 if __name__ == "__main__":

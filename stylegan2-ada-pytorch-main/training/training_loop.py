@@ -16,6 +16,7 @@ import PIL.Image
 import numpy as np
 import torch
 import dnnlib
+from training import conector
 from torch_utils import misc
 from torch_utils import training_stats
 from torch_utils.ops import conv2d_gradfix
@@ -366,6 +367,7 @@ def training_loop(
                 with open(snapshot_pkl, 'wb') as f:
                     pickle.dump(snapshot_data, f)
 
+
         # Evaluate metrics.
         if (snapshot_data is not None) and (len(metrics) > 0):
             if rank == 0:
@@ -405,11 +407,17 @@ def training_loop(
         if progress_fn is not None:
             progress_fn(cur_nimg // 1000, total_kimg)
 
+        if (cur_tick % network_snapshot_ticks == 0):
+            conector.subir_s3(f'{cur_nimg//1000:06d}')
+
         # Update state.
         cur_tick += 1
         tick_start_nimg = cur_nimg
         tick_start_time = time.time()
         maintenance_time = tick_start_time - tick_end_time
+
+
+        
         if done:
             break
 
