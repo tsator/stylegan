@@ -1,0 +1,69 @@
+name: "📊 Solicitud de requerimiento BI"
+description: "Iniciar flujo de requerimiento BI"
+title: "[BI - SOLICITUD DE REQUERIMIENTO]"
+labels: []
+assignees: []
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## 📊 Solicitud de requerimiento BI
+        Por favor completa el siguiente formulario para iniciar el flujo de requerimientos de BI.  
+        Esto nos ayudará a organizar, comprender y dar seguimiento de manera clara y efectiva.
+
+  - type: dropdown
+    id: tipo_requerimiento
+    attributes:
+      label: Tipo de requerimiento
+      description: Selecciona el tipo de requerimiento que deseas solicitar.
+      options:
+        - Nueva funcionalidad
+        - Actualización de funcionalidad
+        - Corrección de errores
+    validations:
+      required: true
+
+  - type: input
+    id: documentacion
+    attributes:
+      label: 📎 Link a la documentación (si aplica)
+      description: Incluye aquí un enlace a documentación o material de referencia.
+      placeholder: "https://ejemplo.com/doc"
+    validations:
+      required: false
+
+  - type: input
+    id: fecha_reunion
+    attributes:
+      label: 📅 Fecha de reunión para comprensión de requerimientos
+      description: Indica una fecha propuesta para la reunión.
+      placeholder: "AAAA-MM-DD"
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: info_test
+    attributes:
+      label: Información disponible para pruebas
+      description: Marca si ya existe información disponible para testear el requerimiento.
+      options:
+        - label: Sí, hay información disponible
+        - label: No, aún falta preparar información
+
+  - type: checkboxes
+    id: finalizacion
+    attributes:
+      label: Estado de finalización del desarrollo
+      description: Marca cuando el desarrollo esté finalizado.
+      options:
+        - label: Desarrollo finalizado ✅
+
+  - type: input
+    id: fecha_validacion
+    attributes:
+      label: 📅 Fecha de validación del desarrollo
+      description: Una vez finalizado el desarrollo, indicar la fecha de validación acordada.
+      placeholder: "AAAA-MM-DD"
+    validations:
+      required: false
