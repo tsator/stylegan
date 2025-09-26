@@ -1,0 +1,22 @@
+name: Bug report
+description: Reporta un error o problema técnico
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ¡Gracias por tu reporte! Por favor llena el siguiente formulario.
+  - type: input
+    id: title
+    attributes:
+      label: Título
+      description: Un título claro y conciso del problema
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: Descripción
+      description: Describe el error en detalle
+    validations:
+      required: true
