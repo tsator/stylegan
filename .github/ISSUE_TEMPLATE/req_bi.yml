@@ -51,14 +51,6 @@ body:
         - label: Sí, hay información disponible
         - label: No, aún falta preparar información
 
-  - type: checkboxes
-    id: finalizacion
-    attributes:
-      label: Estado de finalización del desarrollo
-      description: Marca cuando el desarrollo esté finalizado.
-      options:
-        - label: Desarrollo finalizado ✅
-
   - type: input
     id: fecha_validacion
     attributes:
@@ -67,3 +59,12 @@ body:
       placeholder: "AAAA-MM-DD"
     validations:
       required: false
+
+  - type: checkboxes
+    id: flujo_produccion
+    attributes:
+      label: Estado de puesta en produccion
+      description: Marca cuando el desarrollo esté finalizado y listo en produccion.
+      options:
+        - label: En proceso
+        - label: Finalizado
