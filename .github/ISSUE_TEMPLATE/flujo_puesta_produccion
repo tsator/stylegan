@@ -1,0 +1,36 @@
+name: "🚀 Proceso puesta en producción BI"
+description: "Flujo para gestionar la puesta en producción de un requerimiento BI"
+title: "[BI - PUESTA EN PRODUCCIÓN]"
+labels: []
+assignees: []
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## 🚀 Proceso de puesta en producción BI
+        Completa este formulario para llevar un control del paso a producción de un requerimiento BI.
+
+  - type: input
+    id: link_requerimiento
+    attributes:
+      label: 🔗 Link del requerimiento
+      description: Ingresa el enlace al requerimiento que se quiere pasar a producción.
+      placeholder: "https://github.com/org/repo/issues/123"
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: checklist_produccion
+    attributes:
+      label: ✅ Checklist de validaciones
+      description: Marca cada ítem una vez completado el proceso de puesta en producción.
+      options:
+        - label: Tablero migrado a producción
+        - label: Validación con equipo correspondiente de datos y funcionamiento
+        - label: Validación de datasets y roles incluidos en RLS correspondientes
+        - label: Validación de filtración con usuario de pruebas **APROBADO**
+        - label: Roles asignados al tablero según corresponda
+        - label: Validación de filtrado de información con usuario real
+        - label: Cambio de estado del tablero a **PUBLISHED**
+        - label: Notificar a las personas correspondientes de la disponibilidad del tablero en producción
